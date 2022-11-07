@@ -1,6 +1,6 @@
 public abstract class Thing {
-    private int id;
-    private int roomId;
+    protected int id;
+    protected int roomId;
     private int xPosition;
     private int yPosition;
     private int width;
@@ -10,7 +10,7 @@ public abstract class Thing {
     //CONSTRUCTORS
     Thing(int id, int roomId, int x, int y, int width, int height, boolean collidable) {
         this.id = id;
-        this.roomId = id;
+        this.roomId = roomId;
         xPosition = x;
         yPosition = y;
         this.width = width;
@@ -42,14 +42,14 @@ public abstract class Thing {
     }
 
     //SETTERS
-    public int setRoomId() {
-        return roomId;
+    public void setXPosition(int x) {
+        xPosition = x;
     }
-    public int setXPosition() {
-        return xPosition;
+    public void setYPosition(int y) {
+        yPosition = y;
     }
-    public int setYPosition() {
-        return yPosition;
+    public void setRoomId(int id) {
+        roomId = id;
     }
 
 }

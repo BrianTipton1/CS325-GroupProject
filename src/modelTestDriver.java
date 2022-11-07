@@ -1,16 +1,31 @@
+import java.util.ArrayList;
+
 class ModelTestDriver {
 
     public static void main(String args[]) {
-        Room myRoom = new Room(1);
-        Door myDoor = new Door(1, 1);
-        Player myPlayer = new Player(1, 1);
-        Wall myWall = new Wall(1, 1);
 
-        System.out.println(myRoom.getId());
-        System.out.println(myDoor.getId());
-        System.out.println(myPlayer.getId());
-        System.out.println(myWall.getId());
+        ArrayList<Thing> things = new ArrayList<Thing>();
+        ArrayList<Room> rooms = new ArrayList<Room>();
+
+        for (int i = 0; i < 2; i++) {
+            rooms.add(new Room(i));
+            for (int j = 0; j < 2; j++) {
+                things.add(new Door(j, i));
+            }
+            for (int j = 0; j < 2; j++) {
+                things.add(new Wall(j, i));
+            }
+            things.add(new Player(i));
+        }
+
+        for (int i = 0; i < things.size(); i++) {
+            System.out.print(things.get(i).getClass());
+            System.out.print(": ");
+            System.out.print(things.get(i).getId());
+            System.out.print("  Room: ");
+            System.out.println(things.get(i).getRoomId());
+        }
 
     }
-    
+
 }
