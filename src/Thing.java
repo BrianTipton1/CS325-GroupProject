@@ -1,11 +1,11 @@
 public abstract class Thing {
     protected int id;
     protected int roomId;
-    private int xPosition;
-    private int yPosition;
-    private int width;
-    private int height;
-    boolean collidable;
+    protected int xPosition;
+    protected int yPosition;
+    protected int width;
+    protected int height;
+    protected boolean collidable;
 
     //CONSTRUCTORS
     Thing(int id, int roomId, int x, int y, int width, int height, boolean collidable) {
