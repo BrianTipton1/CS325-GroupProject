@@ -1,7 +1,7 @@
 class Door extends Thing {
 
-    Room leftRoom;
-    Room rightRoom;
+    private int roomBId;
+    private int roomAId;
 
     public Door(int id, int roomId, int x, int y, int width, int height) {
         super(id, roomId, x, y, width, height, true);

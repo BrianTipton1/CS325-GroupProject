@@ -7,6 +7,9 @@ class ModelTestDriver {
         ArrayList<Thing> things = new ArrayList<Thing>();
         ArrayList<Room> rooms = new ArrayList<Room>();
 
+        Player player = new Player(0);
+        things.add(player);
+
         for (int i = 0; i < 2; i++) {
             rooms.add(new Room(i));
             for (int j = 0; j < 2; j++) {
@@ -15,16 +18,11 @@ class ModelTestDriver {
             for (int j = 0; j < 2; j++) {
                 things.add(new Wall(j, i));
             }
-            things.add(new Player(i));
         }
 
-        for (int i = 0; i < things.size(); i++) {
-            System.out.print(things.get(i).getClass());
-            System.out.print(": ");
-            System.out.print(things.get(i).getId());
-            System.out.print("  Room: ");
-            System.out.println(things.get(i).getRoomId());
-        }
+        player.move(1, 20);
+        player.move(3, 3);
+        player.move(2, 1);
 
     }
 
