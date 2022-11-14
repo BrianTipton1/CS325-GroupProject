@@ -1,3 +1,8 @@
+// Caleb Bayles
+// Thing.java
+// 11/13/2022
+// Abstract class of objects that exist on the world map
+
 public abstract class Thing {
     protected int id;
     protected int roomId;
@@ -7,7 +12,7 @@ public abstract class Thing {
     protected int height;
     protected boolean collidable;
 
-    //CONSTRUCTORS
+    // CONSTRUCTORS
     Thing(int id, int roomId, int x, int y, int width, int height, boolean collidable) {
         this.id = id;
         this.roomId = roomId;
@@ -18,7 +23,7 @@ public abstract class Thing {
         this.collidable = collidable;
     }
 
-    //GETTERS
+    // GETTERS
     public int getId() {
         return id;
     }
@@ -41,7 +46,7 @@ public abstract class Thing {
         return collidable;
     }
 
-    //SETTERS
+    // SETTERS
     public void setXPosition(int x) {
         xPosition = x;
     }

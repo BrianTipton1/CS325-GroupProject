@@ -1,3 +1,8 @@
+// Caleb Bayles
+// Room.java
+// 11/13/2022
+// Not a Thing, but contains Things
+
 class Room {
 
     private int id;

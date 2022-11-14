@@ -1,3 +1,8 @@
+// Caleb Bayles
+// Player.java
+// 11/13/2022
+// Controlled by the user and can move around
+
 class Player extends Thing {
 
     public Player(int roomId, int x, int y, int width, int height) {
@@ -13,6 +18,9 @@ class Player extends Thing {
     }
 
     private boolean playerCanKeepStepping(int x, int y) {
+
+        // waiting on world map to be implemented
+
         /*if () { // IF WALL ON THAT SPOT
             return false;
         } else if () { // IF DOOR ON THAT SPOT AND DOOR CLOSED
@@ -20,7 +28,9 @@ class Player extends Thing {
         } else {
         return true;
         }*/
+
         return true;
+
     }
 
     public void move(int direction, int distance) {
@@ -45,11 +55,12 @@ class Player extends Thing {
                 }
             }
 
-            //DEBUGGING
+            // DEBUGGING
             /*System.out.print(xPosition);
             System.out.print(", ");
             System.out.println(yPosition);
             */
+            
         }
 
     }
