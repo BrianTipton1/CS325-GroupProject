@@ -85,3 +85,8 @@ nb-configuration.xml
 
 # Nix Shell Config
 *.nix
+
+# Office files used for viewing project requirements
+*.docx
+*.pptx
+*.xlsx
