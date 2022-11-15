@@ -1,12 +1,12 @@
-package Display;
+package Display.Entities;
 
 
-public class Entity {
-    private static final String verticalWall = "|";
-    private static final String horizontalWall = "-";
-    private static final String wallCorner = "+";
-    private static final String door = "$";
-    private static enum User {
+public class EntityChars {
+    public static final String verticalWall = "|";
+    public static final String horizontalWall = "-";
+    public static final String wallCorner = "+";
+    public static final String door = "$";
+    public static enum User {
         NORTH {
             public String toString() {
                 return "^";
