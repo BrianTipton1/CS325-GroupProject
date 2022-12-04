@@ -1,0 +1,46 @@
+{
+"rooms": [
+    {"roomID": 1,
+    "description": "an ordinary room",
+    "height": 4,
+    "width": 10,
+    "xPos": 3,
+    "yPos": 3,
+    "NDoor": null,
+    "EDoor": null,
+    "SDoor": null,
+    "WDoor": null,
+    "hasVisited": true
+    },
+    {"roomID": 2,
+    "description": "an not so ordinary room",
+    "height": 5,
+    "width": 5,
+    "xPos": 10,
+    "yPos": 3,
+    "NDoor": null,
+    "EDoor": null,
+    "SDoor": null,
+    "WDoor": null,
+    "hasVisited": true
+    }
+],
+"doors": [
+    {"doorID": 1,
+    "room1": 1,
+    "room2": 2,
+    "isLocked": true
+    },
+    {"doorID": 2,
+    "room1": 1,
+    "room2": 999,
+    "isLocked": false
+    }
+],
+"user":[
+    {"xPos": 8,
+    "yPos": 5,
+    "facing": "N"
+    }
+]
+}
