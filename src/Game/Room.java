@@ -1,9 +1,9 @@
-// Caleb Bayles
-// Room.java
+package Game;// Caleb Bayles
+// Game.Room.java
 // 11/13/2022
-// Not a Thing, but contains Things
+// Not a Game.Thing, but contains Things
 
-class Room {
+public class Room {
 
     private int id;
     public boolean explored;

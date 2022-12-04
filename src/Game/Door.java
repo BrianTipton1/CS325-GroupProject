@@ -1,9 +1,9 @@
-// Caleb Bayles
-// Door.java
+package Game;// Caleb Bayles
+// Game.Door.java
 // 11/13/2022
-// Subclass of Thing that opens and closes
+// Subclass of Game.Thing that opens and closes
 
-class Door extends Thing {
+public class Door extends Thing {
 
     private int roomAId;
     private int roomBId;

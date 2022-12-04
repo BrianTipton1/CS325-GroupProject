@@ -1,7 +1,9 @@
-// Caleb Bayles
+package tests;// Caleb Bayles
 // modelTestDriver.java
 // 11/13/2022
-// Tests the model classes (Room, Thing, Player, Wall, Door)
+// Tests the model classes (Game.Room, Game.Thing, Game.Player, Game.Wall, Game.Door)
+
+import Game.*;
 
 import java.util.ArrayList;
 
