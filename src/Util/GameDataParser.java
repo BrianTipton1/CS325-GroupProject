@@ -1,6 +1,10 @@
-// GameDataParser
-// GameDataParser takes in a JSON file and gets level specific data such as "doors", "rooms", and "user"
+package Util;// Util.GameDataParser
+// Util.GameDataParser takes in a JSON file and gets level specific data such as "doors", "rooms", and "user"
 // Returns data as a ArrayList<HashMap<String, Object>>
+
+import lib.JSONArray;
+import lib.JSONException;
+import lib.JSONObject;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -9,7 +13,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-import org.json.*;
 
 public class GameDataParser {
     public static void main(String[] args) throws Exception {
