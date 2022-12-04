@@ -1,5 +1,5 @@
-// Caleb Bayles
-// Thing.java
+package Game;// Caleb Bayles
+// Game.Thing.java
 // 11/13/2022
 // Abstract class of objects that exist on the world map
 

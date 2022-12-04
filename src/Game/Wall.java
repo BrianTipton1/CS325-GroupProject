@@ -1,9 +1,9 @@
-// Caleb Bayles
-// Wall.java
+package Game;// Caleb Bayles
+// Game.Wall.java
 // 11/13/2022
 // A wall. The player can't move past it.
 
-class Wall extends Thing {
+public class Wall extends Thing {
     
     public Wall(int id, int roomId, int x, int y, int width, int height) {
         super(id, roomId, x, y, width, height, true);

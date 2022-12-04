@@ -1,9 +1,9 @@
-// Caleb Bayles
-// Player.java
+package Game;// Caleb Bayles
+// Game.Player.java
 // 11/13/2022
 // Controlled by the user and can move around
 
-class Player extends Thing {
+public class Player extends Thing {
 
     public Player(int roomId, int x, int y, int width, int height) {
         super(0, roomId, x, y, width, height, true);
