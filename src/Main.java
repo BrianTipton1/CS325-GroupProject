@@ -37,11 +37,14 @@ public class Main {
             HashMap<String, Object> data = roomsData.get(i);
             int id = (int) data.get("roomID");
             Boolean hasVisted = (Boolean) data.get("hasVisited");
+            int width = (int) data.get("width");
+            int height = (int) data.get("height");
             System.out.println(id);
             System.out.println(hasVisted);
+            System.out.println(width);
+            System.out.println(height);
 
-            Room room = new Room(id);
-            room.explored = hasVisted;
+            Room room = new Room(id, width, height, hasVisted);
             rooms.add(room);
         }
     }
@@ -49,17 +52,15 @@ public class Main {
     public static void loadDoors(ArrayList<HashMap<String, Object>> doorsData) {
         int count = doorsData.size();
         for(int i = 0; i < count; i++) {
-            //Door(int id, int roomId, int x, int y, int width, int height) {
             HashMap<String, Object> data = doorsData.get(i);
             int id = (int) data.get("doorID");
-            Boolean isLocked = (Boolean) data.get("hasVisited");
-            
-            int roomID = 0;
+            Boolean isLocked = (Boolean) data.get("isLocked");
+            int room1Id = (int) data.get("room1");
+            int room2Id = (int) data.get("room2");
             int x = 0;
             int y = 0;
-            int width = 0;
-            int height = 0;
-            Door door = new Door(id, roomID, x, y, width, height);
+
+            Door door = new Door(id, room1Id, room2Id, x, y, isLocked);
             doors.add(door);
         }
     }
@@ -71,13 +72,8 @@ public class Main {
         int x = (int) data.get("xPos");
         int y = (int) data.get("yPos");
         String facing = (String) data.get("facing");
-        int width = 1;
-        int height = 1;
         
-        // I think you got the Player data mixed up with the Room data
-        // Not sure how to add width and height to a player, except to make it 1, 1
-        //Player(int roomId, int x, int y, int width, int height) 
-        player = new Player(roomID, x, y, width, height);
+        player = new Player(roomID, x, y, facing);
     }
     
 }

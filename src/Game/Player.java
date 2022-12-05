@@ -5,16 +5,21 @@ package Game;// Caleb Bayles
 
 public class Player extends Thing {
 
-    public Player(int roomId, int x, int y, int width, int height) {
-        super(0, roomId, x, y, width, height, true);
+    public String facing;
+
+    public Player(int roomId, int x, int y, String facing) {
+        super(0, roomId, x, y, 1, 1, true);
+        this.facing = facing;
     }
 
     public Player(int roomId, int x, int y) {
         super(0, roomId, x, y, 1, 1, true);
+        facing = "N";
     }
     
     public Player(int roomId) {
         super(0, roomId, 0, 0, 1, 1, true);
+        facing = "N";
     }
 
     private boolean playerCanKeepStepping(int x, int y) {

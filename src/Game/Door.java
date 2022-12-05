@@ -8,24 +8,34 @@ public class Door extends Thing {
     private int roomAId;
     private int roomBId;
 
-    public Door(int id, int roomId, int x, int y, int width, int height) {
-        super(id, roomId, x, y, width, height, true);
+    public Door(int id, int roomAId, int roomBId, int x, int y, Boolean closed) {
+        super(id, roomAId, x, y, 1, 1, closed);
+        this.roomAId = roomAId;
+        this.roomBId = roomBId;
+    }
+    
+    public Door(int id, int roomAId, int roomBId, int x, int y) {
+        super(id, roomAId, x, y, 1, 1, true);
+        this.roomAId = roomAId;
+        this.roomBId = roomBId;
     }
 
-    public Door(int id, int roomId, int x, int y) {
-        super(id, roomId, x, y, 1, 1, true);
-    }
-
-    public Door(int id, int roomId) {
-        super(id, roomId, 0, 0, 1, 1, true);
+    public Door(int id, int roomAId, int roomBId) {
+        super(id, roomAId, 0, 0, 1, 1, true);
+        this.roomAId = roomAId;
+        this.roomBId = roomBId;
     }
 
     public boolean isClosed() {
         return collidable;
     }
 
-    public void setClosed(boolean closed) {
-        this.collidable = closed;
+    public void close() {
+        this.collidable = true;
+    }
+
+    public void open() {
+        this.collidable = false;
     }
 
     public int getRoomAId() {
