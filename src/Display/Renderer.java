@@ -7,7 +7,7 @@ import java.util.*;
 public class Renderer {
     private ArrayList<ArrayList<String>> mainDisplay;
 
-    private void clearScreen(){
+    private void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
@@ -22,6 +22,7 @@ public class Renderer {
             this.getMainDisplay().add(tmp);
         }
     }
+
     private void fullDraw() {
         this.clearScreen();
         for (ArrayList<String> row : this.getMainDisplay()) {
@@ -38,15 +39,42 @@ public class Renderer {
         this.mainDisplay = mainDisplay;
     }
 
-    public void showPatch(Patch patch){
-            // !TODO
-    }
-    public void hidePatch(Patch patch){
+    public void showPatch(Patch patch) {
         // !TODO
+        int x = patch.getxCord();
+        int y = patch.getyCord();
+        int xSize = patch.getxSize();
+        int ySize = patch.getySize();
+        for (int row = x; row < xSize; row++) {
+            for (int column = y; column < ySize; column++) {
+                this.getMainDisplay()
+                        .get(row);
+//                        .set(column, patch.getEntity().type.toString());
+            }
+        }
     }
 
-    public ArrayList<Patch> movePatches(ArrayList<Patch> patches, int incrementX, int incrementY){
-        // !TODO Increment all patches x, y distance
+    public void hidePatch(Patch patch) {
+        // !TODO needs testing still
+        int x = patch.getxCord();
+        int y = patch.getyCord();
+        int xSize = patch.getxSize();
+        int ySize = patch.getySize();
+        for (int row = x; row < xSize; row++) {
+            for (int column = y; column < ySize; column++) {
+                this.getMainDisplay()
+                        .get(row)
+                        .set(column, " ");
+            }
+        }
+    }
+
+    public ArrayList<Patch> movePatches(ArrayList<Patch> patches, int incrementX, int incrementY) {
+        for (Patch patch :
+                patches) {
+            patch.setxSize(patch.getxSize() + incrementX);
+            patch.setySize(patch.getySize() + incrementY);
+        }
         return patches;
     }
 }
