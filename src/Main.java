@@ -59,12 +59,11 @@ public class Main {
                         }
                     }
                 }
+                System.out.println("You are currently in room " + myCurrentRoomId);
             }
 
             // UPDATE SCREEN
 
-            // PRINT DESCRIPTIONS
-            System.out.println("You are currently in room " + myCurrentRoomId);
         }
         userInput.close();
     }
