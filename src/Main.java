@@ -1,8 +1,9 @@
-import Display.Renderer;
+import Display.State;
 import Game.Room;
 import Game.Door;
 import Game.Player;
 import Util.GameDataParser;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Vector;
@@ -15,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello CS325!");
-        
+
         // Load JSON Data
         String fileName = "test.json";
         GameDataParser gameData = new GameDataParser();
@@ -34,6 +35,7 @@ public class Main {
         // GAME LOOP
         Scanner userInput = new Scanner(System.in);
         String command;
+        State state = new State(rooms, doors, player);
         while (true) {
 
             // GET COMMAND
@@ -51,7 +53,7 @@ public class Main {
             if (command.equals("get my room")) {
                 if (player != null) {
                     myCurrentRoomId = player.getRoomId();
-                    
+
                     // GET PLAYER'S CURRENT ROOM BASED ON THEIR ROOM ID
                     for (int i = 0; i < rooms.size(); i++) {
                         if (rooms.get(i).getId() == myCurrentRoomId) {
@@ -71,7 +73,7 @@ public class Main {
 
     public static void loadRooms(ArrayList<HashMap<String, Object>> roomsData) {
         int count = roomsData.size();
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             HashMap<String, Object> data = roomsData.get(i);
             int id = (int) data.get("roomID");
             Boolean hasVisted = (Boolean) data.get("hasVisited");
@@ -89,7 +91,7 @@ public class Main {
 
     public static void loadDoors(ArrayList<HashMap<String, Object>> doorsData) {
         int count = doorsData.size();
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             HashMap<String, Object> data = doorsData.get(i);
             int id = (int) data.get("doorID");
             Boolean isLocked = (Boolean) data.get("isLocked");
@@ -110,8 +112,8 @@ public class Main {
         int x = (int) data.get("xPos");
         int y = (int) data.get("yPos");
         String facing = (String) data.get("facing");
-        
+
         player = new Player(roomID, x, y, facing);
     }
-    
+
 }
