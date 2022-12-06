@@ -6,6 +6,7 @@ import Util.GameDataParser;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Vector;
+import java.util.Scanner;
 
 public class Main {
     static Vector<Room> rooms = new Vector<Room>();
@@ -29,6 +30,26 @@ public class Main {
             ArrayList<HashMap<String, Object>> PlayerData = gameData.getPlayerData();
             loadPlayer(PlayerData);
         }
+
+
+        // GAME LOOP
+        Scanner userInput = new Scanner(System.in);
+        String command;
+        while (true) {
+
+            // GET COMMAND
+            System.out.print("Enter a command: ");
+            command = userInput.nextLine();
+            if (command.equals("QUIT")) {
+                break;
+            }
+
+            // DO STUFF BASED ON COMMAND
+
+            // UPDATE SCREEN
+
+        }
+        userInput.close();
     }
 
     public static void loadRooms(ArrayList<HashMap<String, Object>> roomsData) {
