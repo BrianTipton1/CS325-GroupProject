@@ -31,14 +31,13 @@ public class Main {
             loadPlayer(PlayerData);
         }
 
-
         // GAME LOOP
         Scanner userInput = new Scanner(System.in);
         String command;
         while (true) {
 
             // GET COMMAND
-            System.out.print("Enter a command: ");
+            System.out.print("Command: ");
             command = userInput.nextLine();
             if (command.equals("QUIT")) {
                 break;
@@ -46,8 +45,26 @@ public class Main {
 
             // DO STUFF BASED ON COMMAND
 
+            int myCurrentRoomId = -1;
+            Room myCurrentRoom;
+
+            if (command.equals("get my room")) {
+                if (player != null) {
+                    myCurrentRoomId = player.getRoomId();
+                    
+                    // GET PLAYER'S CURRENT ROOM BASED ON THEIR ROOM ID
+                    for (int i = 0; i < rooms.size(); i++) {
+                        if (rooms.get(i).getId() == myCurrentRoomId) {
+                            myCurrentRoom = rooms.get(i);
+                        }
+                    }
+                }
+            }
+
             // UPDATE SCREEN
 
+            // PRINT DESCRIPTIONS
+            System.out.println("You are currently in room " + myCurrentRoomId);
         }
         userInput.close();
     }
